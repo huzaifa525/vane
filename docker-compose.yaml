@@ -1,10 +1,10 @@
 services:
   vane:
-    image: itzcrazykns1337/vane:latest
     build:
       context: .
+      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
+      - '4000:3000'
     environment:
       - HOSTNAME=0.0.0.0
     volumes:

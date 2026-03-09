@@ -31,11 +31,12 @@ class GeminiProvider extends BaseModelProvider<GeminiConfig> {
 
   async getDefaultModels(): Promise<ModelList> {
     const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models?key=${this.config.apiKey}`,
+      'https://generativelanguage.googleapis.com/v1beta/models',
       {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
+          'x-goog-api-key': this.config.apiKey,
         },
       },
     );

@@ -127,7 +127,7 @@ class OpenAILLM extends BaseLLM<OpenAIConfig> {
                 return {
                   name: tc.function.name,
                   id: tc.id,
-                  arguments: safeParseJson(tc.function.arguments),
+                  arguments: safeParseJson(tc.function.arguments) as Record<string, any>,
                 };
               }
             })
